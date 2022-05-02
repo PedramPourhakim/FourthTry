@@ -1,0 +1,35 @@
+﻿@page
+@model ThirdTry.Pages.RegisterModel
+@{
+}
+<h1>Register</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="model.Email" class="control-label"></label>
+                <input type="text" asp-for="model.Email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="model.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.Password" class="control-label"></label>
+                <input type="password" asp-for="model.Password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="model.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.ConfirmPassword" class="control-label"></label>
+                <input type="password" asp-for="model.ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                <span asp-validation-for="model.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
